@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="file" version="2.5" method="upgrade">
+	<name>TinyMCE pl-PL</name>
+	<author>Polskie Centrum Joomla!</author>
+	<authorEmail>zwiastun@joomla.pl</authorEmail>
+	<authorUrl>http://www.joomla.pl</authorUrl>
+	<copyright>(C) 2010-2012 Polskie Centrum Joomla!</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>3.5.2</version>
+	<creationDate>20 czerwca 2012</creationDate>
+	<description><![CDATA[
+		<h2>Gratulujemy pomyślnej instalacji pakietu językowego edytora TinyMCE 3.5.2 w Joomla 2.5</h2>
+		Jeśli używasz innych języków niż angielski i polski, pamiętaj, aby zainstalować wszystkie pakiety językowe, zanim w konfiguracji TinyMCE ustawisz na 'Tak' opcję 'Automatyczny wybór języka'.<br/>Aby korzystać z tłumaczeń edytora TinyMCE:
+		<ol>
+		<li>Wybierz z menu zaplecza Rozszerzenia &rart; Dodatki</li>
+		<li>Odszukaj <a href="index.php?option=com_plugins&view=plugins&filter_search=Edytor - TinyMCE">Edytor - TinyMCE</a></li>
+		<li>Przejdź do sekcji Opcje podstawowe</li>
+		<li>Tryb pracy :: Rozszerzony (opcjonalnie -- jeśli chcesz korzystać z pełnej funkcjonalności TinyMCE)</li>
+		<li>Ustaw Automatyczny wybór języka :: Tak</li>
+		</ol>
+		<p></p>
+		<p>Zauważone usterki i błędy prosimy zgłaszać na forum polskiej społeczności Joomla! w dziale <a href="http://forum.joomla.pl/forumdisplay.php?35-T%C5%82umaczenia" target="_blank">Tłumaczenia</a></p>
+
+		]]>
+	</description>
+
+	<!-- Fileset definition -->
+	<fileset>
+		<files target="media/editors">
+					<filename>tinymce/jscripts/tiny_mce/langs/pl.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/advhr/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/advimage/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/advlink/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/autosave/langs/pl.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/emotions/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/fullpage/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/media/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/paste/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/style/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/table/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/template/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/themes/advanced/langs/pl.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/themes/advanced/langs/pl_dlg.js</filename>
+					<filename>tinymce/jscripts/tiny_mce/themes/simple/langs/pl.js</filename>
+		</files>
+	</fileset>
+</extension>
