@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site" method="upgrade">
+    <name>elementary</name>
+    <version>1.0.0</version>
+    <creationDate>May 2020</creationDate>
+    <author>mariop</author>
+    <authorEmail>mariopweb@gmail.com</authorEmail>
+    <copyright>Copyright (C) 2020. All rights reserved.</copyright>
+    <description>TPL_ELEMENTARY_XML_DESCRIPTION</description>
+    <files>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+        <folder></folder>
+    </files>
+</extension>
