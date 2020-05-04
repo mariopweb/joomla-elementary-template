@@ -47,6 +47,13 @@ if (($this->countModules('left-menu') || $this->countModules('mainbody-left')) &
 } else {
     $spanMd = 'md-12';
 }
+$spanSm = "";
+if (!$this->countModules('footer')) {
+    $spanSm = "sm-6";
+} else {
+    $spanSm = "sm-4";
+}
+
 ?>
 
 
@@ -193,17 +200,17 @@ if (($this->countModules('left-menu') || $this->countModules('mainbody-left')) &
         <!-- footer -->
         <footer>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
                     <p>
                         &copy; <?php echo date('Y') . " " . $site; ?>
                     </p>
                 </div>
-                <div class="col-sm-4 text-center">
-                    Joomla module with position 'fotter' here
-                    <!-- <jdoc:include type="modules" name="footer" style="none" /> -->
-                    <p></p>
-                </div>
-                <div class="col-sm-4">
+                <?php if ($this->countModules('footer')) : ?>
+                    <div class="col-sm-4">
+                        <jdoc:include type="modules" name="footer" style="xhtml" />
+                    </div>
+                <?php endif; ?>
+                <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
                     <p class="text-right">
                         <a href="#top" id="back-top">
                             <i class="fa fa-arrow-up"></i> <?php echo JText::_('TPL_BOOTSTRAP4_BACKTOTOP'); ?>

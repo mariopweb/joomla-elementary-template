@@ -63,6 +63,10 @@
   padding: 1.25rem;
 }
 
+footer .row > [class*="col-"] {
+  padding: 1.25rem;
+}
+
 @media screen and (max-width: 768px) {
   #top .top-inner {
     -webkit-box-pack: center !important;
@@ -74,6 +78,14 @@
     display: block;
     text-align: center;
     margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .col-sm-4 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    max-width: 100%;
   }
 }
 /*# sourceMappingURL=template.css.map */
