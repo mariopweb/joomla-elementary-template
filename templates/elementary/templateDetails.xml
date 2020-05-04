@@ -24,6 +24,13 @@
 		<position>promo</position>
 		<position>promo-right</position>
 		<position>content-top</position>
+		<position>left-menu</position>
+		<position>mainbody-left</position>
+		<position>mainbody-right</position>
+		<position>breadcrumbs</position>
+		<position>user-top</position>
+		<position>user-bottom</position>
+		<position>content-bottom</position>
 	</positions>
     <languages folder="language">
         <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.ini</language>

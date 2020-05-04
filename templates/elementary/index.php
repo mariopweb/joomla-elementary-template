@@ -16,21 +16,33 @@ $app = Factory::getApplication();
 $params = $app->getTemplate(true)->params;
 
 $site = $app->get('sitename');
-// var_dump($params);
+// var_dump($this->countModules('promo'));
 
 // font awesome
 HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', 'relative' => true));
 // add stylesheet
 HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
 
-$spanMd = "";
+$spanPromoMd = "";
 if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
     # code...
-    $spanMd = 'md-6';
+    $spanPromoMd = 'md-6';
 } elseif ($this->countModules('promo-left') && !$this->countModules('promo-right')) {
     # code...
-    $spanMd = 'md-9';
+    $spanPromoMd = 'md-9';
 } elseif (!$this->countModules('promo-left') && $this->countModules('promo-right')) {
+    $spanPromoMd = 'md-9';
+} else {
+    $spanPromoMd = 'md-12';
+}
+$spanMd = "";
+if (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && $this->countModules('mainbody-right')) {
+    # code...
+    $spanMd = 'md-6';
+} elseif (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && !$this->countModules('mainbody-right')) {
+    # code...
+    $spanMd = 'md-9';
+} elseif ((!$this->countModules('left-menu') && !$this->countModules('mainbody-left')) && $this->countModules('mainbody-right')) {
     $spanMd = 'md-9';
 } else {
     $spanMd = 'md-12';
@@ -104,14 +116,14 @@ if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
                 </div>
             <?php endif; ?>
             <?php if ($this->countModules('promo')) : ?>
-                <div id="promo" class="col-<?php echo $spanMd; ?>">
+                <div id="promo" class="col-<?php echo $spanPromoMd; ?>">
                     <div class="card">
                         <div class="card-body">
                             <jdoc:include type="modules" name="promo" style="xhtml" />
                         </div>
                     </div>
                 </div>
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($this->countModules('promo-right')) : ?>
                 <div id="promo-right" class="col-md-3">
                     <div class="card">
@@ -132,41 +144,50 @@ if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
         <!-- mainbody content -->
         <main class="mainbody">
             <div class="row">
-                <div id="mainbody-left" class="col-md-3">
-                    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8d1e14">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
-                            Menu
-                        </button>
-                        <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
-                            <!-- joomla module here with 'left-navbar' position -->
-                        </div>
-                    </nav>
-                    <!-- joomla module here with 'left-sidebar' position -->
+                <?php if ($this->countModules('left-menu') || $this->countModules('mainbody-left')) : ?>
+                    <div id="mainbody-left" class="col-md-3">
+                        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8d1e14">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
+                                Menu
+                            </button>
+                            <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
+                                <jdoc:include type="modules" name="left-menu" style="none" />
+                            </div>
+                        </nav>
+                        <jdoc:include type="modules" name="mainbody-left" style="none" />
+                    </div>
+                <?php endif; ?>
+                <div id="mainbody-content" role="main" class="col-<?php echo $spanMd; ?>">
+                    <!-- breadcrumps -->
+                    <?php if ($this->countModules('breadcrumbs')) : ?>
+                        <jdoc:include type="module" name="breadcrumbs" style="xhtml" />
+                    <?php endif; ?>
+                    <!-- user-top -->
+                    <?php if ($this->countModules('user-top')) : ?>
+                        <jdoc:include type="module" name="user-top" style="xhtml" />
+                    <?php endif; ?>
+                    <!-- main content -->
+                    <jdoc:include type="message" />
+                    <jdoc:include type="component" />
+                    <!-- user-bottom -->
+                    <?php if ($this->countModules('user-bottom')) : ?>
+                        <jdoc:include type="module" name="user-bottom" style="xhtml" />
+                    <?php endif; ?>
                 </div>
-                <div id="mainbody-content" role="main" class="col-md-6">
-                    <nav aria-label="breadcrumb">
-                        <!-- joomla module here with 'breadcrumbs' position -->
-
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Home</li>
-                        </ol>
-                    </nav>
-                    <!-- joomla module here with 'user-top' position -->
-                    User top
-
-                    Main content
-
-                    <!-- joomla module here with 'user-bottom' position -->
-                    User bottom
-                </div>
-                <div id="mainbody-right" class="col-md-3">Right content</div>
+                <?php if ($this->countModules('mainbody-right')) : ?>
+                    <div id="mainbody-right" class="col-md-3">
+                        <jdoc:include type="modules" name="mainbody-right" style="xhtml" />
+                    </div>
+                <?php endif; ?>
             </div>
         </main>
-        <div class="row">
-            <div id="content-bottom" class="col-md-12">
-                Full width content-bottom div
+        <?php if ($this->countModules('content-bottom')) : ?>
+            <div class="row">
+                <div id="content-bottom" class="col-md-12">
+                    Full width content-bottom div
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
     <div id="bottom" class="container-fluid">
         <!-- footer -->
