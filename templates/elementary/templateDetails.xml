@@ -15,4 +15,43 @@
         <filename>template_thumbnail.png</filename>
         <folder></folder>
     </files>
+    <positions>
+		<position>top</position>
+		<position>search</position>
+		<position>header-right</position>
+		<position>main-menu</position>
+		<position>promo-left</position>
+		<position>promo</position>
+		<position>promo-right</position>
+		<position>content-top</position>
+	</positions>
+    <languages folder="language">
+        <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.ini</language>
+        <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.sys.ini</language>
+        <language tag="pl-PL">en-GB/en-GB.tpl_elementary.ini</language>
+        <language tag="pl-PL">en-GB/en-GB.tpl_elementary.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field 
+                    name="sitename"
+                    type="text"
+                    label="TPL_ELEMENTARY_SITENAME"
+                    defualt=""
+                    description="TPL_ELEMENTARY_SITENAME_DESC"
+                    filter="string"
+                />
+                <field 
+                    name="sitedescription"
+                    type="text"
+                    label="JGLOBAL_DESCRIPTION"
+                    default=""
+                    description="JGLOBAL_SUBHEADING_DESC"
+                    filter="string"
+                    />
+            </fieldset>
+        </fields>
+    </config>
+    
 </extension>
