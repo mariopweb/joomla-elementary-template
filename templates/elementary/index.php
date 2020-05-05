@@ -16,12 +16,15 @@ $app = Factory::getApplication();
 $params = $app->getTemplate(true)->params;
 
 $site = $app->get('sitename');
-// var_dump($this->countModules('promo'));
 
 // font awesome
 HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', 'relative' => true));
 // add stylesheet
 HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
+
+// custom
+HTMLHelper::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
 
 $spanPromoMd = "";
 if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
