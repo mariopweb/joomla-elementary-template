@@ -58,6 +58,16 @@
                     description="JGLOBAL_SUBHEADING_DESC"
                     filter="string"
                     />
+                <field
+                    name="themecolor"
+                    type="list"
+                    label="TPL_ELEMENTARY_THEMECOLOR_LABEL"
+                    description="TPL_ELEMENTARY_THEMECOLOR_DESC"
+                    default="red"
+                    filter="word"
+                >
+                <option value="red">TPL_ELEMENTARY_THEMECOLOR_RED</option>
+                </field>
             </fieldset>
         </fields>
     </config>

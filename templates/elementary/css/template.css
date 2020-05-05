@@ -4,35 +4,8 @@
   padding: .5rem 1rem;
 }
 
-.navbar-dark .navbar-nav li > a {
-  color: rgba(225, 225, 255, 0.5);
-}
-
-.navbar-dark .navbar-nav li > a:hover {
-  text-decoration: none;
-  color: #fff;
-}
-
-.navbar-dark .navbar-nav li.active > a {
-  color: #fff;
-}
-
 .nav-pills li > a {
   border-radius: .25rem;
-}
-
-.navbar-dark .nav-pills li > a {
-  color: rgba(225, 225, 255, 0.5);
-}
-
-.navbar-dark .nav-pills li > a:hover {
-  text-decoration: none;
-  color: #fff;
-}
-
-.navbar-dark .nav-pills li.active > a {
-  color: #fff;
-  background-color: rgba(225, 225, 255, 0.5);
 }
 
 @media screen and (min-width: 992px) {

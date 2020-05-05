@@ -16,11 +16,14 @@ $app = Factory::getApplication();
 $params = $app->getTemplate(true)->params;
 
 $site = $app->get('sitename');
+$themeColor = $params->get('themecolor');
+// var_dump($themeColor);
 
 // font awesome
 HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', 'relative' => true));
 // add stylesheet
 HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('stylesheet', $themeColor . '.css', array('relative' => true, 'version' => 'auto'));
 
 // custom
 HTMLHelper::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
@@ -76,7 +79,7 @@ if (!$this->countModules('footer')) {
 
 <body>
     <!-- top -->
-    <div id="top" class="container-fluid text-white" style="background-color: #8d1e14">
+    <div id="top" class="container-fluid text-white">
         <div class="row">
             <div class="top-inner col-md-6 d-flex justify-content-start">
                 <div class="top-module">
@@ -106,14 +109,16 @@ if (!$this->countModules('footer')) {
             </div>
         </header>
         <!-- nav -->
-        <nav class="navbar navbar-expand-lg navbar-dark" style="<?php echo ($this->countModules('main-menu') ? 'background-color: #8d1e14' : '') ?>">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarSupporterContent" aria-controls="mainNavbarSupporterContent" aria-expanded="false" aria-label="Main menu toggler button">
-                Menu
-            </button>
-            <div class="collapse navbar-collapse" id="mainNavbarSupporterContent">
-                <jdoc:include type="modules" name="main-menu" style="none" />
-            </div>
-        </nav>
+        <?php if ($this->countModules('main-menu')) : ?>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarSupporterContent" aria-controls="mainNavbarSupporterContent" aria-expanded="false" aria-label="Main menu toggler button">
+                    Menu
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbarSupporterContent">
+                    <jdoc:include type="modules" name="main-menu" style="none" />
+                </div>
+            </nav>
+        <?php endif; ?>
         <!-- promo -->
         <div class="row">
             <?php if ($this->countModules('promo-left')) : ?>
@@ -156,7 +161,7 @@ if (!$this->countModules('footer')) {
             <div class="row">
                 <?php if ($this->countModules('left-menu') || $this->countModules('mainbody-left')) : ?>
                     <div id="mainbody-left" class="col-md-3">
-                        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8d1e14">
+                        <nav class="navbar navbar-expand-lg navbar-dark">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
                                 Menu
                             </button>
