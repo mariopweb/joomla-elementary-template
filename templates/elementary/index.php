@@ -24,10 +24,16 @@ HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', '
 // add stylesheet
 HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
 HTMLHelper::_('stylesheet', $themeColor . '.css', array('relative' => true, 'version' => 'auto'));
+// menu stylesheet
+HTMLHelper::_('stylesheet', 'sm-core-css.css', array('relative' => true, 'version' => 'auto'));
+// js
+HTMLHelper::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
+// menu js
+HTMLHelper::_('script', 'jquery.smartmenus.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'jquery.smartmenus.bootstrap-4.js', array('version' => 'auto', 'relative' => true));
 
 // custom
 HTMLHelper::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
-HTMLHelper::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
 
 $spanPromoMd = "";
 if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
@@ -166,10 +172,10 @@ if (!$this->countModules('footer')) {
                                 Menu
                             </button>
                             <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
-                                <jdoc:include type="modules" name="left-menu" style="none" />
+                                <jdoc:include type="modules" name="left-menu" style="xhtml" />
                             </div>
                         </nav>
-                        <jdoc:include type="modules" name="mainbody-left" style="none" />
+                        <jdoc:include type="modules" name="mainbody-left" style="xhtml" />
                     </div>
                 <?php endif; ?>
                 <div id="mainbody-content" role="main" class="col-<?php echo $spanMd; ?>">

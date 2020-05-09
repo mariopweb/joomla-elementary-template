@@ -32,4 +32,8 @@
   color: #fff;
   background-color: rgba(225, 225, 255, 0.5);
 }
+
+.navbar-dark .nav-child {
+  background-color: black;
+}
 /*# sourceMappingURL=red.css.map */
