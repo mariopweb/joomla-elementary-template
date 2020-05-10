@@ -6,6 +6,10 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
 
 defined('_JEXEC') or die();
+
+// $this to
+// Joomla\CMS\Document\HtmlDocumen
+
 // Joomla\CMS\Document\HtmlDocument
 $doc = Factory::getDocument();
 $app = Factory::getApplication();
@@ -17,7 +21,7 @@ $params = $app->getTemplate(true)->params;
 
 $site = $app->get('sitename');
 $themeColor = $params->get('themecolor');
-// var_dump($themeColor);
+// var_dump($this);
 
 // font awesome
 HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', 'relative' => true));
@@ -48,13 +52,13 @@ if ($this->countModules('promo-left') && $this->countModules('promo-right')) {
     $spanPromoMd = 'md-12';
 }
 $spanMd = "";
-if (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && $this->countModules('mainbody-right')) {
+if (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && ($this->countModules('mainbody-right') || $this->countModules('right-menu'))) {
     # code...
     $spanMd = 'md-6';
-} elseif (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && !$this->countModules('mainbody-right')) {
+} elseif (($this->countModules('left-menu') || $this->countModules('mainbody-left')) && (!$this->countModules('mainbody-right') && !$this->countModules('right-menu'))) {
     # code...
     $spanMd = 'md-9';
-} elseif ((!$this->countModules('left-menu') && !$this->countModules('mainbody-left')) && $this->countModules('mainbody-right')) {
+} elseif ((!$this->countModules('left-menu') && !$this->countModules('mainbody-left')) && ($this->countModules('mainbody-right') || $this->countModules('right-menu'))) {
     $spanMd = 'md-9';
 } else {
     $spanMd = 'md-12';
@@ -70,7 +74,6 @@ if (!$this->countModules('footer')) {
 
 
 <!doctype html>
-<!-- $this to Joomla\CMS\Document\HtmlDocument-->
 <html lang="<?php echo $this->language; ?>">
 
 <head>
@@ -80,7 +83,12 @@ if (!$this->countModules('footer')) {
     <jdoc:include type="head" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <?php if ($this->direction === 'rtl') : ?>
+        <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css" integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+    <?php else : ?>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <?php endif; ?>
+
 </head>
 
 <body>
@@ -167,15 +175,19 @@ if (!$this->countModules('footer')) {
             <div class="row">
                 <?php if ($this->countModules('left-menu') || $this->countModules('mainbody-left')) : ?>
                     <div id="mainbody-left" class="col-md-3">
-                        <nav class="navbar navbar-expand-lg navbar-dark">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
-                                Menu
-                            </button>
-                            <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
-                                <jdoc:include type="modules" name="left-menu" style="xhtml" />
-                            </div>
-                        </nav>
-                        <jdoc:include type="modules" name="mainbody-left" style="xhtml" />
+                        <?php if ($this->countModules('left-menu')) : ?>
+                            <nav class="navbar navbar-expand-lg navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
+                                    Menu
+                                </button>
+                                <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
+                                    <jdoc:include type="modules" name="left-menu" style="xhtml" />
+                                </div>
+                            </nav>
+                        <?php endif; ?>
+                        <?php if ($this->countModules('mainbody-left')) : ?>
+                            <jdoc:include type="modules" name="mainbody-left" style="xhtml" />
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div id="mainbody-content" role="main" class="col-<?php echo $spanMd; ?>">
@@ -195,9 +207,21 @@ if (!$this->countModules('footer')) {
                         <jdoc:include type="module" name="user-bottom" style="xhtml" />
                     <?php endif; ?>
                 </div>
-                <?php if ($this->countModules('mainbody-right')) : ?>
+                <?php if ($this->countModules('right-menu') || $this->countModules('mainbody-right')) : ?>
                     <div id="mainbody-right" class="col-md-3">
-                        <jdoc:include type="modules" name="mainbody-right" style="xhtml" />
+                        <?php if ($this->countModules('right-menu')) : ?>
+                            <nav class="navbar navbar-expand-lg navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rightNavbarSupporterContent" aria-controls="rightNavbarSupporterContent" aria-expanded="false" aria-label="Right menu toggler button">
+                                    Menu
+                                </button>
+                                <div class="collapse navbar-collapse" id="rightNavbarSupporterContent">
+                                    <jdoc:include type="modules" name="right-menu" style="xhtml" />
+                                </div>
+                            </nav>
+                        <?php endif; ?>
+                        <?php if ($this->countModules('mainbody-right')) : ?>
+                            <jdoc:include type="modules" name="mainbody-right" style="xhtml" />
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>
