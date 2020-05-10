@@ -30,10 +30,18 @@
 
 .navbar-dark .nav-pills li.active > a {
   color: #fff;
-  background-color: rgba(225, 225, 255, 0.5);
+  background-color: #8d1e14;
 }
 
 .navbar-dark .nav-child {
   background-color: black;
+}
+
+.navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:active {
+  background-color: #8d1e14;
+}
+
+.navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:hover {
+  background-color: #8d1e14;
 }
 /*# sourceMappingURL=red.css.map */
