@@ -852,6 +852,7 @@
 				$sub.css({
 					top: 'auto',
 					left: '0',
+					right: 'auto',
 					marginLeft: x,
 					marginTop: y - itemH
 				});
