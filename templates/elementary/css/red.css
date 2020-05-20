@@ -44,4 +44,9 @@
 .navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:hover {
   background-color: #8d1e14;
 }
+
+.pagination .page-item.active .page-link {
+  background-color: #8d1e14;
+  border-color: #8d1e14;
+}
 /*# sourceMappingURL=red.css.map */

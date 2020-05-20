@@ -1,6 +1,5 @@
 .navbar-nav li > a, .nav-pills li > a {
   display: block;
-  text-transform: uppercase;
   padding: .5rem 1rem;
 }
 
@@ -34,6 +33,16 @@
 
 #content-bottom {
   padding: 1.25rem;
+}
+
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 footer .row > [class*="col-"] {

@@ -4,6 +4,7 @@ use Joomla\CMS\Document\HtmlDocument;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Language\Text;
 
 defined('_JEXEC') or die();
 
@@ -23,8 +24,8 @@ $site = $app->get('sitename');
 $themeColor = $params->get('themecolor');
 // var_dump($this);
 
-// font awesome
-HTMLHelper::_('stylesheet', 'font-awesome.min.css', array('version' => 'auto', 'relative' => true));
+// J! icons
+$doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css');
 // add stylesheet
 HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
 HTMLHelper::_('stylesheet', $themeColor . '.css', array('relative' => true, 'version' => 'auto'));
@@ -251,7 +252,7 @@ if (!$this->countModules('footer')) {
                 <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
                     <p class="text-right">
                         <a href="#top" id="back-top">
-                            <i class="fa fa-arrow-up"></i> <?php echo JText::_('TPL_BOOTSTRAP4_BACKTOTOP'); ?>
+                            <span class="icon-arrow-up large-icon"></span><?php echo Text::_('TPL_ELEMENTARY_BACKTOTOP'); ?>
                         </a>
                     </p>
                 </div>
