@@ -7,7 +7,7 @@
 }
 
 .navbar-dark .navbar-nav li > a {
-  color: rgba(225, 225, 255, 0.5);
+  color: rgba(225, 225, 255, 0.8);
 }
 
 .navbar-dark .navbar-nav li > a:hover {
@@ -20,7 +20,7 @@
 }
 
 .navbar-dark .nav-pills li > a {
-  color: rgba(225, 225, 255, 0.5);
+  color: rgba(225, 225, 255, 0.8);
 }
 
 .navbar-dark .nav-pills li > a:hover {
@@ -30,7 +30,7 @@
 
 .navbar-dark .nav-pills li.active > a {
   color: #fff;
-  background-color: #8d1e14;
+  background-color: #65150e;
 }
 
 .navbar-dark .nav-child {
@@ -38,15 +38,15 @@
 }
 
 .navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:active {
-  background-color: #8d1e14;
+  background-color: #65150e;
 }
 
 .navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:hover {
-  background-color: #8d1e14;
+  background-color: #65150e;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #8d1e14;
+  background-color: #65150e;
   border-color: #8d1e14;
 }
 /*# sourceMappingURL=red.css.map */
