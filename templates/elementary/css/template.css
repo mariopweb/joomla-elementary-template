@@ -23,7 +23,7 @@
   color: #fff;
 }
 
-#promo .card, #promo-left .card, #promo-right .card {
+#promo .card, #promo-left .card, #promo-right .card, #header .card {
   border: 0px;
 }
 
@@ -55,7 +55,7 @@ footer .row > [class*="col-"] {
         -ms-flex-pack: center !important;
             justify-content: center !important;
   }
-  header .jumbotron .header-search, header .jumbotron .header-brand {
+  #header .jumbotron .header-search, #header .jumbotron .header-brand {
     float: none !important;
     display: block;
     text-align: center;

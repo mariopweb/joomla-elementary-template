@@ -51,6 +51,11 @@
                     description="TPL_ELEMENTARY_SITENAME_DESC"
                     filter="string"
                 />
+                <field
+                    name="sitelogo"
+                    type="media"
+                    label="TPL_ELEMENTARY_SITELOGO"
+                />
                 <field 
                     name="sitedescription"
                     type="text"

@@ -20,10 +20,18 @@ $app = Factory::getApplication();
  */
 $params = $app->getTemplate(true)->params;
 
-$site = $app->get('sitename');
+// template params
 $themeColor = $params->get('themecolor');
-// var_dump($this);
-
+if ($params->get('sitename')) {
+    $siteName = htmlspecialchars($params->get('sitename'));
+}
+if ($params->get('sitedescription')) {
+    $siteDesc = htmlspecialchars($params->get('sitedescription'));
+}
+if ($params->get('sitelogo')) {
+    # code...
+    $logoSrc = Uri::base() . htmlspecialchars($params->get('sitelogo'));
+}
 // J! icons
 $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css');
 // add stylesheet
@@ -98,7 +106,9 @@ if (!$this->countModules('footer')) {
         <div class="row">
             <div class="top-inner col-md-6 d-flex justify-content-start">
                 <div class="top-module">
-                    <h5><a href="<?php echo Uri::base(); ?>"><?php echo $params->get('sitename'); ?></a></h5>
+                    <?php if ($params->get('sitename')) : ?>
+                        <h5><a href="<?php echo Uri::base(); ?>"><?php echo $siteName; ?></a></h5>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="top-inner col-md-6 d-flex justify-content-end">
@@ -111,12 +121,19 @@ if (!$this->countModules('footer')) {
     <!--main body wrapper -->
     <div id="wrapper" class="container">
         <!-- header -->
-        <header class="header">
+        <header id="header">
             <div class="header-inner bg-white clearfix">
                 <div class="header-brand float-left">
-                    <?php if ($params->get('sitedescription')) : ?>
-                        <h3><?php echo $params->get('sitedescription'); ?></h3>
-                    <?php endif ?>
+                    <div class="card">
+                        <?php if ($params->get('sitelogo')) : ?>
+                            <img class="card-img-top" src="<?php echo $logoSrc; ?>" alt="Logo">
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <?php if ($params->get('sitedescription')) : ?>
+                                <h3><?php echo $siteDesc; ?></h3>
+                            <?php endif ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="header-search float-right">
                     <jdoc:include type="modules" name="header-right" style="xhtml" />
@@ -241,7 +258,7 @@ if (!$this->countModules('footer')) {
             <div class="row">
                 <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
                     <p>
-                        &copy; <?php echo date('Y') . " " . $site; ?>
+                        &copy; <?php echo date('Y') . " " . ($params->get('sitename') ? $siteName : ''); ?>
                     </p>
                 </div>
                 <?php if ($this->countModules('footer')) : ?>
