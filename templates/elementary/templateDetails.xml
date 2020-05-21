@@ -73,6 +73,7 @@
                     filter="word"
                 >
                 <option value="red">TPL_ELEMENTARY_THEMECOLOR_RED</option>
+                <option value="green">TPL_ELEMENTARY_THEMECOLOR_GREEN</option>
                 </field>
             </fieldset>
         </fields>

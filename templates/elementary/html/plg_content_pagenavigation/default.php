@@ -23,7 +23,9 @@ switch ($themeColor) {
 	case 'red':
 		$btnColor = 'danger';
 		break;
-
+	case 'green':
+		$btnColor = 'success';
+		break;
 	default:
 		$btnColor = 'primary';
 		break;
