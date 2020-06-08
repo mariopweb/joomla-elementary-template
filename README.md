@@ -7,9 +7,11 @@ This is a Bootstrap 4 style, responsive Joomla! template with integrated feature
 
 Components:
 
+Modules:
+
 Plugins:
 ## Menu style
-<br /> Menus can be styled with the use of a Menu Class Suffix present in the module's parameters ("Module settings > Advanced"):
+Menus can be styled with the use of a Menu Class Suffix present in the module's parameters ("Module settings > Advanced"):
 <br /> Use bootstrap 4 classes depending on the menu style you expect:
 * Horizontal menu: put in ' navbar-nav mr-auto'
 * Vertical menu: put in ' navbar-nav flex-column nav-pills'
@@ -18,10 +20,37 @@ Plugins:
 * Vertical menu: put in ' navbar-nav flex-column nav-pills sm-rtl'
 
 **Important**: when applying these suffixes pay your attention to the leading blank space.
+
+## Module style
+Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
+
+<br />**For styling the module (title + content):**
+<br />use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
+<br />**For styling the header itself:**
+<br />use Header Class present in the module's parameters ("Module settings > Advanced").
+
+For example:
+If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0
+<br />use: bg-primary text-white border-0<br />
+**Important**: The styling do not affect the content of menu type modules that is styled by theme color (like main-menu for example).
+
+If you want your module title to have: backgroundcolor: grey & text-color: black
+<br />use: bg-light text-dark
+
+**Important**: when typing the classes inside the appropriate fields pay your attention to the leading blank space.
+
+More about card component and classes you can use:
+https://getbootstrap.com/docs/4.5/components/card/#card-styles
+
+You can also use a template theme leading color:
+For this use a class related to the color: 
+* 'bg-green'
+* 'bg-red'
+
 ## Template Parameters
 * Site name
 * Descrition
-* Theme color (only red as for now)
+* Theme color
 ## Language Support
 Right now the following languages for the Joomla backend are supported in this template:
 * English (en-GB)
