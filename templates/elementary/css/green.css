@@ -2,6 +2,14 @@
   background-color: #6ca910;
 }
 
+.card.bg-red {
+  background-color: #6ca910;
+}
+
+.card-header.bg-green, .card-body.bg-green {
+  background-color: #6ca910;
+}
+
 .navbar {
   background-color: #6ca910;
 }

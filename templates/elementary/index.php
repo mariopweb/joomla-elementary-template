@@ -113,7 +113,7 @@ if (!$this->countModules('footer')) {
             </div>
             <div class="top-inner col-md-6 d-flex justify-content-end">
                 <div class="top-module">
-                    <jdoc:include type="modules" name="search" style="xhtml" />
+                    <jdoc:include type="modules" name="search" style="elementaryMod" />
                 </div>
             </div>
         </div>
@@ -136,55 +136,36 @@ if (!$this->countModules('footer')) {
                     </div>
                 </div>
                 <div class="header-search float-right">
-                    <jdoc:include type="modules" name="header-right" style="xhtml" />
+                    <jdoc:include type="modules" name="header-right" style="elementaryMod" />
                 </div>
             </div>
         </header>
         <!-- nav -->
         <?php if ($this->countModules('main-menu')) : ?>
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarSupporterContent" aria-controls="mainNavbarSupporterContent" aria-expanded="false" aria-label="Main menu toggler button">
-                    Menu
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavbarSupporterContent">
-                    <jdoc:include type="modules" name="main-menu" style="none" />
-                </div>
-            </nav>
+            <jdoc:include type="modules" name="main-menu" style="elementaryMainMenu" />
         <?php endif; ?>
         <!-- promo -->
         <div class="row">
             <?php if ($this->countModules('promo-left')) : ?>
                 <div id="promo-left" class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <jdoc:include type="modules" name="promo-left" style="xhtml" />
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="promo-left" style="elementaryMod" />
                 </div>
             <?php endif; ?>
             <?php if ($this->countModules('promo')) : ?>
                 <div id="promo" class="col-<?php echo $spanPromoMd; ?>">
-                    <div class="card">
-                        <div class="card-body">
-                            <jdoc:include type="modules" name="promo" style="xhtml" />
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="promo" style="elementaryMod" />
                 </div>
             <?php endif; ?>
             <?php if ($this->countModules('promo-right')) : ?>
                 <div id="promo-right" class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <jdoc:include type="modules" name="promo-right" style="xhtml" />
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="promo-right" style="elementaryMod" />
                 </div>
             <?php endif; ?>
         </div>
         <?php if ($this->countModules('content-top')) : ?>
             <div class="row">
                 <div id="content-top" class="col-md-12">
-                    <jdoc:include type="modules" name="content-top" style="xhtml" />
+                    <jdoc:include type="modules" name="content-top" style="elementaryMod" />
                 </div>
             </div>
         <?php endif; ?>
@@ -194,51 +175,39 @@ if (!$this->countModules('footer')) {
                 <?php if ($this->countModules('left-menu') || $this->countModules('mainbody-left')) : ?>
                     <div id="mainbody-left" class="col-md-3">
                         <?php if ($this->countModules('left-menu')) : ?>
-                            <nav class="navbar navbar-expand-lg navbar-dark">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNavbarSupporterContent" aria-controls="leftNavbarSupporterContent" aria-expanded="false" aria-label="Left menu toggler button">
-                                    Menu
-                                </button>
-                                <div class="collapse navbar-collapse" id="leftNavbarSupporterContent">
-                                    <jdoc:include type="modules" name="left-menu" style="xhtml" />
-                                </div>
-                            </nav>
+
+                            <jdoc:include type="modules" name="left-menu" style="elementaryMod" />
+
                         <?php endif; ?>
                         <?php if ($this->countModules('mainbody-left')) : ?>
-                            <jdoc:include type="modules" name="mainbody-left" style="xhtml" />
+                            <jdoc:include type="modules" name="mainbody-left" style="elementaryMod" />
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div id="mainbody-content" role="main" class="col-<?php echo $spanMd; ?>">
                     <!-- breadcrumps -->
                     <?php if ($this->countModules('breadcrumbs')) : ?>
-                        <jdoc:include type="module" name="breadcrumbs" style="xhtml" />
+                        <jdoc:include type="module" name="breadcrumbs" style="elementaryMod" />
                     <?php endif; ?>
                     <!-- user-top -->
                     <?php if ($this->countModules('user-top')) : ?>
-                        <jdoc:include type="module" name="user-top" style="xhtml" />
+                        <jdoc:include type="module" name="user-top" style="elementaryMod" />
                     <?php endif; ?>
                     <!-- main content -->
                     <jdoc:include type="message" />
                     <jdoc:include type="component" />
                     <!-- user-bottom -->
                     <?php if ($this->countModules('user-bottom')) : ?>
-                        <jdoc:include type="module" name="user-bottom" style="xhtml" />
+                        <jdoc:include type="module" name="user-bottom" style="elementaryMod" />
                     <?php endif; ?>
                 </div>
                 <?php if ($this->countModules('right-menu') || $this->countModules('mainbody-right')) : ?>
                     <div id="mainbody-right" class="col-md-3">
                         <?php if ($this->countModules('right-menu')) : ?>
-                            <nav class="navbar navbar-expand-lg navbar-dark">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rightNavbarSupporterContent" aria-controls="rightNavbarSupporterContent" aria-expanded="false" aria-label="Right menu toggler button">
-                                    Menu
-                                </button>
-                                <div class="collapse navbar-collapse" id="rightNavbarSupporterContent">
-                                    <jdoc:include type="modules" name="right-menu" style="xhtml" />
-                                </div>
-                            </nav>
+                            <jdoc:include type="modules" name="right-menu" style="elementaryMod" />
                         <?php endif; ?>
                         <?php if ($this->countModules('mainbody-right')) : ?>
-                            <jdoc:include type="modules" name="mainbody-right" style="xhtml" />
+                            <jdoc:include type="modules" name="mainbody-right" style="elementaryMod" />
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -247,7 +216,7 @@ if (!$this->countModules('footer')) {
         <?php if ($this->countModules('content-bottom')) : ?>
             <div class="row">
                 <div id="content-bottom" class="col-md-12">
-                    Full width content-bottom div
+                    <jdoc:include type="modules" name="content-bottom" style="elementaryMod" />
                 </div>
             </div>
         <?php endif; ?>
@@ -263,7 +232,7 @@ if (!$this->countModules('footer')) {
                 </div>
                 <?php if ($this->countModules('footer')) : ?>
                     <div class="col-sm-4">
-                        <jdoc:include type="modules" name="footer" style="xhtml" />
+                        <jdoc:include type="modules" name="footer" style="elementaryMod" />
                     </div>
                 <?php endif; ?>
                 <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
