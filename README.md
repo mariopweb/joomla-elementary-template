@@ -11,7 +11,7 @@ Modules:
 
 Plugins:
 ## Menu style
-<br /> Menus can be styled with the use of a Menu Class Suffix present in the module's parameters ("Module settings > Advanced"):
+Menus can be styled with the use of a Menu Class Suffix present in the module's parameters ("Module settings > Advanced"):
 <br /> Use bootstrap 4 classes depending on the menu style you expect:
 * Horizontal menu: put in ' navbar-nav mr-auto'
 * Vertical menu: put in ' navbar-nav flex-column nav-pills'
@@ -22,7 +22,7 @@ Plugins:
 **Important**: when applying these suffixes pay your attention to the leading blank space.
 
 ## Module style
-<br />Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
+Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
 
 <br />**For styling the module (title + content):**
 <br />use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
