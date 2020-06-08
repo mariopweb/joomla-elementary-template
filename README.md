@@ -23,15 +23,18 @@ Plugins:
 
 ## Module style
 <br />Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
-##### For styling the module (title + content) 
-use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
-##### For styling the header itself 
-use Header Class present in the module's parameters ("Module settings > Advanced").
+
+<br />**For styling the module (title + content):**
+<br />use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
+<br />**For styling the header itself:**
+<br />use Header Class present in the module's parameters ("Module settings > Advanced").
 
 For example:
-If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0 <br />use: bg-primary text-white border-0
+If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0
+use: bg-primary text-white border-0
 
-If you want your module title to have: backgroundcolor: grey & text-color: black<br />use: bg-light text-dark
+If you want your module title to have: backgroundcolor: grey & text-color: black
+use: bg-light text-dark
 
 **Important**: when typing the classes inside the appropriate fields pay your attention to the leading blank space.
 
