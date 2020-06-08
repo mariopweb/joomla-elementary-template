@@ -31,10 +31,10 @@ Plugins:
 
 For example:
 If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0
-use: bg-primary text-white border-0
+<br />use: bg-primary text-white border-0
 
 If you want your module title to have: backgroundcolor: grey & text-color: black
-use: bg-light text-dark
+<br />use: bg-light text-dark
 
 **Important**: when typing the classes inside the appropriate fields pay your attention to the leading blank space.
 
