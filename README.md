@@ -31,7 +31,8 @@ Modules are embed inside Bootstrap card component, so they can be styled freely 
 
 For example:
 If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0
-<br />use: bg-primary text-white border-0
+<br />use: bg-primary text-white border-0<br />
+**Important**: The styling do not affect the content of menu type modules that is styled by theme color (like main-menu for example).
 
 If you want your module title to have: backgroundcolor: grey & text-color: black
 <br />use: bg-light text-dark
