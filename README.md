@@ -7,6 +7,8 @@ This is a Bootstrap 4 style, responsive Joomla! template with integrated feature
 
 Components:
 
+Modules:
+
 Plugins:
 ## Menu style
 <br /> Menus can be styled with the use of a Menu Class Suffix present in the module's parameters ("Module settings > Advanced"):
@@ -18,10 +20,33 @@ Plugins:
 * Vertical menu: put in ' navbar-nav flex-column nav-pills sm-rtl'
 
 **Important**: when applying these suffixes pay your attention to the leading blank space.
+
+## Module style
+<br />Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
+##### For styling the module (title + content) 
+use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
+##### For styling the header itself 
+use Header Class present in the module's parameters ("Module settings > Advanced").
+
+For example:
+If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0 <br />use: bg-primary text-white border-0
+
+If you want your module title to have: backgroundcolor: grey & text-color: black<br />use: bg-light text-dark
+
+**Important**: when typing the classes inside the appropriate fields pay your attention to the leading blank space.
+
+More about card component and classes you can use:
+https://getbootstrap.com/docs/4.5/components/card/#card-styles
+
+You can also use a template theme leading color:
+For this use a class related to the color: 
+* 'bg-green'
+* 'bg-red'
+
 ## Template Parameters
 * Site name
 * Descrition
-* Theme color (only red as for now)
+* Theme color
 ## Language Support
 Right now the following languages for the Joomla backend are supported in this template:
 * English (en-GB)
