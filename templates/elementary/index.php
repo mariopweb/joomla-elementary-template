@@ -113,7 +113,7 @@ if (!$this->countModules('footer')) {
             </div>
             <div class="top-inner col-md-6 d-flex justify-content-end">
                 <div class="top-module">
-                    <jdoc:include type="modules" name="search" style="elementaryMod" />
+                    <jdoc:include type="modules" name="search" style="xhtml" />
                 </div>
             </div>
         </div>
@@ -187,7 +187,7 @@ if (!$this->countModules('footer')) {
                 <div id="mainbody-content" role="main" class="col-<?php echo $spanMd; ?>">
                     <!-- breadcrumps -->
                     <?php if ($this->countModules('breadcrumbs')) : ?>
-                        <jdoc:include type="module" name="breadcrumbs" style="elementaryMod" />
+                        <jdoc:include type="module" name="breadcrumbs" style="none" />
                     <?php endif; ?>
                     <!-- user-top -->
                     <?php if ($this->countModules('user-top')) : ?>
@@ -232,7 +232,7 @@ if (!$this->countModules('footer')) {
                 </div>
                 <?php if ($this->countModules('footer')) : ?>
                     <div class="col-sm-4">
-                        <jdoc:include type="modules" name="footer" style="elementaryMod" />
+                        <jdoc:include type="modules" name="footer" style="xtml" />
                     </div>
                 <?php endif; ?>
                 <div class="col-<?php echo $spanSm; ?> d-none d-md-block">
