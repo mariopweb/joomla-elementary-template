@@ -10,8 +10,6 @@
 
 defined('JPATH_BASE') or die;
 
-JHtml::_('bootstrap.framework');
-
 $canEdit = $displayData['params']->get('access-edit');
 
 ?>
