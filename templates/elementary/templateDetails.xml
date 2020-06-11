@@ -33,6 +33,7 @@
 		<position>user-bottom</position>
 		<position>content-bottom</position>
 		<position>footer</position>
+        <position>debug</position>
 	</positions>
     <languages folder="language">
         <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.ini</language>
