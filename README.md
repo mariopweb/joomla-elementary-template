@@ -24,6 +24,10 @@ Menus can be styled with the use of a Menu Class Suffix present in the module's 
 ## Module style
 Modules are embed inside Bootstrap card component, so they can be styled freely with appropriate classes.
 
+**Important**: The rule above do not concern the modules placed on the following positions of the template
+* serach
+* footer
+
 <br />**For styling the module (title + content):**
 <br />use Module Class Suffix present in the module's parameters ("Module settings > Advanced")
 <br />**For styling the header itself:**
@@ -33,6 +37,7 @@ For example:
 If you want your module (header + content) to have: backgroundcolor: blue & text-color: white & border:0
 <br />use: bg-primary text-white border-0<br />
 **Important**: The styling do not affect the content of menu type modules that is styled by theme color (like main-menu for example).
+
 
 If you want your module title to have: backgroundcolor: grey & text-color: black
 <br />use: bg-light text-dark
@@ -46,6 +51,9 @@ You can also use a template theme leading color:
 For this use a class related to the color: 
 * 'bg-green'
 * 'bg-red'
+* 'bg-blue'
+
+**Important**: These classes cannot be used with the module on 'breadcrumbs' position.
 
 ## Custom style
 You can use user.css file to style the template customarily 
