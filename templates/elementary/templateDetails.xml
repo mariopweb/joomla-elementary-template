@@ -16,7 +16,6 @@
         <folder></folder>
     </files>
     <positions>
-		<position>top</position>
 		<position>search</position>
 		<position>header-right</position>
 		<position>main-menu</position>
@@ -38,8 +37,8 @@
     <languages folder="language">
         <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.ini</language>
         <language tag="pl-PL">pl-PL/pl-PL.tpl_elementary.sys.ini</language>
-        <language tag="pl-PL">en-GB/en-GB.tpl_elementary.ini</language>
-        <language tag="pl-PL">en-GB/en-GB.tpl_elementary.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_elementary.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_elementary.sys.ini</language>
     </languages>
     <config>
         <fields name="params">
