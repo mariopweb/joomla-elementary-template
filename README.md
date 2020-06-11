@@ -47,6 +47,9 @@ For this use a class related to the color:
 * 'bg-green'
 * 'bg-red'
 
+## Custom style
+You can use user.css file to style the template customarily 
+
 ## Template Parameters
 * Site name
 * Descrition
@@ -74,6 +77,5 @@ https://github.com/sniggle/joomla-bootstrap4-template
 Simple becuase.. I needed something basic, elementary. Like Joomla! core Protostar, but with some newest technologies. Not some 'Powered by X Framework' like templates. Yes, there are great, but to set up a basic website there are just ... too confusing and time consuming.
 
 You could now ask "Why didn't just contribute to that Boostrap4 template project"
-The answer is that I just wated to create something on one's own and learn something new on my way to .. learn coding and .. maybe find a new job... 
-
+The answer is that I just wated to create something on one's own and learn something new on my way to .. learn coding.
 Anyway it's just my hobby right now. 
