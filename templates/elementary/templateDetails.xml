@@ -75,6 +75,7 @@
                 >
                 <option value="red">TPL_ELEMENTARY_THEMECOLOR_RED</option>
                 <option value="green">TPL_ELEMENTARY_THEMECOLOR_GREEN</option>
+                <option value="blue">TPL_ELEMENTARY_THEMECOLOR_BLUE</option>
                 </field>
             </fieldset>
         </fields>

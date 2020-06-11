@@ -1,0 +1,60 @@
+#top {
+  background-color: #105089;
+}
+
+.card.bg-blue {
+  background-color: #105089;
+}
+
+.card-header.bg-blue, .card-body.bg-blue {
+  background-color: #105089;
+}
+
+.navbar {
+  background-color: #105089;
+}
+
+.navbar-dark .navbar-nav li > a {
+  color: rgba(225, 225, 255, 0.8);
+}
+
+.navbar-dark .navbar-nav li > a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav li.active > a {
+  color: #fff;
+}
+
+.navbar-dark .nav-pills li > a {
+  color: rgba(225, 225, 255, 0.8);
+}
+
+.navbar-dark .nav-pills li > a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-dark .nav-pills li.active > a {
+  color: #fff;
+  background-color: #1982dd;
+}
+
+.navbar-dark .nav-child {
+  background-color: black;
+}
+
+.navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:active {
+  background-color: #1982dd;
+}
+
+.navbar-dark .dropdown-item.active, .navbar-dark .dropdown-item:hover {
+  background-color: #1982dd;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #1982dd;
+  border-color: #105089;
+}
+/*# sourceMappingURL=blue.css.map */
