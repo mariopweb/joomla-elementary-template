@@ -36,8 +36,7 @@ switch ($themeColor) {
 
 ?>
 
-
-<nav class="pager pagenav text-center">
+<nav class="pager pagenav text-center mt-5">
 	<?php if ($row->prev) :
 		$direction = $lang->isRtl() ? 'right' : 'left'; ?>
 		<span class="previous">
