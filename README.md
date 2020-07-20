@@ -5,11 +5,11 @@ This is a Bootstrap 4 style, responsive Joomla! template with integrated feature
 * dedicated template positions to support responsive left and right menus
 * Joomla Standard Icomoon Fonts
 ## Joomla! core overrides (HTML folder):
-Modules:
+### Modules:
 * mod_breadcrumbs --> Breadcrumb Navigation
-Plugins
+### Plugins:
 * plg_content_pagenavigation --> Joomla Content Plugin to show "Previous" and "Next" buttons under articles
-General:
+### General:
 * modules
 * pagination
 ## Menu style
